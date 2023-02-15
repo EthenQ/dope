@@ -42,6 +42,10 @@ function config.nvim_bufferline()
     options = {
       modified_icon = '✥',
       buffer_close_icon = '',
+      numbers = function(opts)
+        return string.format('%s.)', opts.ordinal )
+      end,
+
       always_show_bufferline = false,
     },
   })

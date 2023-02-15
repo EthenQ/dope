@@ -5,7 +5,8 @@ package({
   'neovim/nvim-lspconfig',
   -- used filetype to lazyload lsp
   -- config your language filetype in here
-  ft = { 'lua', 'rust', 'c', 'cpp' },
+  --
+  ft = { 'lua', 'rust', 'c', 'cpp', 'dockerfile' },
   config = conf.nvim_lsp,
 })
 
