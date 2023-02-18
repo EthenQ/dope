@@ -6,6 +6,7 @@ end
 
 function config.dashboard()
   local db = require('dashboard')
+  local home = os.getenv('HOME')
   db.setup({
     theme = 'hyper',
     config = {
@@ -29,7 +30,7 @@ function config.dashboard()
         {
           desc = ' dotfiles',
           group = 'Number',
-          action = 'Telescope dotfiles',
+          action = 'Telescope find_files hidden=true search_dirs={"'..home..'/.dotfiles"}',
           key = 'd',
         },
       },
