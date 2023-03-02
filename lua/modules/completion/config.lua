@@ -13,6 +13,7 @@ local enhance_attach = function(client,bufnr)
 end
 -- config server in this function
 function config.nvim_lsp()
+  require('lspconfig').prosemd_lsp.setup{}
   require('lspconfig').dockerls.setup{}
   require('lspconfig').bashls.setup{}
   require('lspconfig').lua_ls.setup{
@@ -148,6 +149,13 @@ function config.lua_snip()
   require('luasnip.loaders.from_vscode').lazy_load({
     paths = { './snippets/' },
   })
+end
+
+function config.auto_pairs()
+  require("nvim-autopairs").setup({})
+  local cmp = require('cmp')
+  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+  cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 end
 
 return config

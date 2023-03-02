@@ -60,4 +60,7 @@ function config.nvim_tree()
   })
 end
 
+function config.galaxyline()
+  require("galaxyline.themes.eviline")
+end
 return config

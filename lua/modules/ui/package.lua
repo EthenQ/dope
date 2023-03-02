@@ -13,3 +13,6 @@ package({
 })
 
 package({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, dependencies = { 'nvim-tree/nvim-web-devicons'} })
+
+
+package({'NTBBloodbath/galaxyline.nvim', config = conf.galaxyline, dependencies = { "nvim-tree/nvim-web-devicons", opt = true }})

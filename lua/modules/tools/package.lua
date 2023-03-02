@@ -8,6 +8,8 @@ package({
   dependencies = {
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzy-native.nvim' },
+    { 'jlesquembre/nterm.nvim' },
+    { 'Olical/aniseed' },
   },
 })
 
@@ -31,3 +33,12 @@ package({
       })
     end,
 })
+
+package({
+  'keaising/im-select.nvim',
+  config = function ()
+    require('im_select').setup()
+  end
+})
+
+package({"ellisonleao/glow.nvim", config = true, cmd = "Glow"})
