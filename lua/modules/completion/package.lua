@@ -6,7 +6,7 @@ package({
   -- used filetype to lazyload lsp
   -- config your language filetype in here
   --
-  ft = { 'go','sh','lua', 'rust', 'c', 'cpp', 'dockerfile' ,'markdown'},
+  ft = { 'go','sh','lua', 'rust', 'c', 'cpp', 'dockerfile' ,'markdown','yaml'},
   config = conf.nvim_lsp,
 })
 

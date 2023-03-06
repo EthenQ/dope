@@ -14,6 +14,7 @@ end
 -- config server in this function
 function config.nvim_lsp()
   require('lspconfig').prosemd_lsp.setup{}
+  require('lspconfig').yamlls.setup{}
   require('lspconfig').dockerls.setup{}
   require('lspconfig').bashls.setup{}
   require('lspconfig').lua_ls.setup{
