@@ -36,8 +36,8 @@ imap({
   -- insert mode
   { '<C-h>', '<Bs>', opts(noremap) },
   { '<C-e>', '<End>', opts(noremap) },
-  { '<C-s>', '<Esc>:w<CR>'},
-  { '<C-a>', '<Esc>^i'},
+  { '<C-s>', '<Esc>:w<CR>' },
+  { '<C-a>', '<Esc>^i' },
 })
 
 -- commandline remap
@@ -56,15 +56,15 @@ nmap({
   -- Telescope
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fi', cmd('Telescope find_files'), opts(noremap, silent) },
   -- BufferLine
-  { '<Leader>1', cmd('BufferLineGoToBuffer 1'), opts(noremap, nowait, slient)},
-  { '<Leader>2', cmd('BufferLineGoToBuffer 2'), opts(noremap, nowait, slient)},
-  { '<Leader>3', cmd('BufferLineGoToBuffer 3'), opts(noremap, nowait, slient)},
-  { '<Leader>4', cmd('BufferLineGoToBuffer 4'), opts(noremap, nowait, slient)},
-  { '<Leader>5', cmd('BufferLineGoToBuffer 5'), opts(noremap, nowait, slient)},
-  { '<Leader>6', cmd('BufferLineGoToBuffer 6'), opts(noremap, nowait, slient)},
-  { '<Leader>7', cmd('BufferLineGoToBuffer 7'), opts(noremap, nowait, slient)},
-  { '<Leader>8', cmd('BufferLineGoToBuffer 8'), opts(noremap, nowait, slient)},
-  { '<Leader>9', cmd('BufferLineGoToBuffer 9'), opts(noremap, nowait, slient)},
+  { '<Leader>1', cmd('BufferLineGoToBuffer 1'), opts(noremap, nowait, slient) },
+  { '<Leader>2', cmd('BufferLineGoToBuffer 2'), opts(noremap, nowait, slient) },
+  { '<Leader>3', cmd('BufferLineGoToBuffer 3'), opts(noremap, nowait, slient) },
+  { '<Leader>4', cmd('BufferLineGoToBuffer 4'), opts(noremap, nowait, slient) },
+  { '<Leader>5', cmd('BufferLineGoToBuffer 5'), opts(noremap, nowait, slient) },
+  { '<Leader>6', cmd('BufferLineGoToBuffer 6'), opts(noremap, nowait, slient) },
+  { '<Leader>7', cmd('BufferLineGoToBuffer 7'), opts(noremap, nowait, slient) },
+  { '<Leader>8', cmd('BufferLineGoToBuffer 8'), opts(noremap, nowait, slient) },
+  { '<Leader>9', cmd('BufferLineGoToBuffer 9'), opts(noremap, nowait, slient) },
 })

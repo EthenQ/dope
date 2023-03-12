@@ -19,7 +19,7 @@ function config.dashboard()
           desc = ' Files',
           group = 'Label',
           action = 'Telescope find_files',
-          key = 'f',
+          key = 'i',
         },
         {
           desc = ' Apps',
@@ -30,7 +30,7 @@ function config.dashboard()
         {
           desc = ' dotfiles',
           group = 'Number',
-          action = 'Telescope find_files hidden=true search_dirs={"'..home..'/.dotfiles"}',
+          action = 'Telescope find_files hidden=true search_dirs={"' .. home .. '/.dotfiles"}',
           key = 'd',
         },
       },
@@ -44,7 +44,7 @@ function config.nvim_bufferline()
       modified_icon = '✥',
       buffer_close_icon = '',
       numbers = function(opts)
-        return string.format('%s.)', opts.ordinal )
+        return string.format('%s.)', opts.ordinal)
       end,
 
       always_show_bufferline = false,
@@ -63,4 +63,5 @@ end
 function config.galaxyline()
   require("galaxyline.themes.eviline")
 end
+
 return config
