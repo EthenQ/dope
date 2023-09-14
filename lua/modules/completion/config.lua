@@ -14,22 +14,28 @@ local enhance_attach = function(client, bufnr)
 end
 -- config server in this function
 function config.nvim_lsp()
+  require 'lspconfig'.bufls.setup {}
+  require 'lspconfig'.ansiblels.setup {}
+  require('lsp-format').setup {
+    groovy = { tab_width = 4 }
+  }
+
+  require('lspconfig').groovyls.setup {
+    on_attach = require("lsp-format").on_attach,
+    cmd = { "java", "-jar",
+      "/Users/yingkai.qyk/Workspace/github.com/groovy-language-server/build/libs/groovy-language-server-all.jar" },
+    filetypes = { "groovy", },
+  }
   require('lspconfig').jsonls.setup {
     capabilities = capabilities,
   }
   require('lspconfig.configs').helm_ls = {
     default_config = {},
   }
-  require("lspconfig").helm_ls.setup {
-    filetypes = { "helm" };
-    cmd = { "helm_ls", "serve" };
-    root_dir = function(fname)
-      return require("lspconfig.util").root_pattern('Chart.yaml')(fname)
-    end
-  }
   require('lspconfig').prosemd_lsp.setup {}
   require('lspconfig').yamlls.setup {
     capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    filetypes = { "yaml" },
     settings = {
       yaml = {
         schemas = {
@@ -39,6 +45,23 @@ function config.nvim_lsp()
       },
     }
   }
+
+  require("lspconfig").helm_ls.setup {
+    filetypes = { "helm" },
+    cmd = { "helm_ls", "serve" },
+    root_dir = function(fname)
+      return require("lspconfig.util").root_pattern('Chart.yaml')(fname)
+    end,
+    on_attach = function()
+      for i, server in ipairs(vim.lsp.buf_get_clients()) do
+        print(server.name)
+        if server.name == 'yamlls' then
+          vim.lsp.get_client_by_id(server.id).stop()
+        end
+      end
+    end
+
+  }
   require('lspconfig').dockerls.setup {}
   require('lspconfig').bashls.setup {}
   require('lspconfig').lua_ls.setup {
@@ -46,7 +69,7 @@ function config.nvim_lsp()
       home .. "/Workspace/lua-language-server/bin/lua-language-server",
       "-E",
       home .. "/Workspace/lua-language-server/main.lua"
-    };
+    },
     settings = {
       Lua = {
         diagnostics = {
@@ -60,22 +83,22 @@ function config.nvim_lsp()
       },
     }
   }
-  require('lspconfig').gopls.setup {
-    cmd = {
-      'gopls', -- share the gopls instance if there is one already
-      '-remote=auto', --[[ debug options ]] --
-      "-logfile=auto",
-      "-debug=:0",
-      '-remote.debug=:0',
-      "-rpc.trace",
-    },
-    on_attach = enhance_attach,
-    capabilities = capabilities,
-    init_options = {
-      usePlaceholders = true,
-      completeUnimported = true,
-    }
-  }
+  -- require('lspconfig').gopls.setup {
+  --   cmd = {
+  --     'gopls',                              -- share the gopls instance if there is one already
+  --     '-remote=auto', --[[ debug options ]] --
+  --     "-logfile=auto",
+  --     "-debug=:0",
+  --     '-remote.debug=:0',
+  --     "-rpc.trace",
+  --   },
+  --   on_attach = enhance_attach,
+  --   capabilities = capabilities,
+  --   init_options = {
+  --     usePlaceholders = true,
+  --     completeUnimported = true,
+  --   }
+  -- }
 end
 
 function config.nvim_cmp()

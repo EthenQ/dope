@@ -13,6 +13,7 @@ function config.dashboard()
       week_header = {
         enable = true,
       },
+      project = { enable = false },
       shortcut = {
         { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
         {
@@ -46,7 +47,6 @@ function config.nvim_bufferline()
       numbers = function(opts)
         return string.format('%s.)', opts.ordinal)
       end,
-
       always_show_bufferline = false,
     },
   })

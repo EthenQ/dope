@@ -6,7 +6,9 @@ package({
   -- used filetype to lazyload lsp
   -- config your language filetype in here
   --
-  ft = { 'go', 'sh', 'lua', 'rust', 'c', 'cpp', 'dockerfile', 'markdown', 'yaml', 'helm', 'json', 'jsonc' },
+  ft = { 'bufls', 'go', 'sh', 'lua', 'rust', 'c', 'cpp', 'dockerfile', 'markdown', 'yaml', 'helm', 'json', 'jsonc',
+    'groovy',
+    "yaml.asnsible" },
   config = conf.nvim_lsp,
 })
 
@@ -41,9 +43,10 @@ package({
   build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
 })
 
-package({ 'ray-x/navigator.lua',
+package({
+  'ray-x/navigator.lua',
   dependencies = {
-    { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+    { 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
     { 'neovim/nvim-lspconfig' },
   },
   config = function()
@@ -52,3 +55,14 @@ package({ 'ray-x/navigator.lua',
 })
 
 package({ 'towolf/vim-helm' })
+
+package({ 'lukas-reineke/lsp-format.nvim' })
+
+-- package({
+--   "zbirenbaum/copilot.lua",
+--   config = function()
+--     require("copilot").setup({})
+--   end,
+-- })
+package({ 'codota/tabnine-nvim', build = ":! ./dl_binaries.sh" })
+--package({ 'github/copilot.vim' })

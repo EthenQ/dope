@@ -24,21 +24,25 @@ package({
 package({
   'folke/which-key.nvim',
   config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-      require("which-key").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup({
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    })
+  end,
 })
 
 package({
   'keaising/im-select.nvim',
-  config = function ()
+  config = function()
     require('im_select').setup()
   end
 })
 
-package({"ellisonleao/glow.nvim", config = true, cmd = "Glow"})
+package({ "ellisonleao/glow.nvim", config = true, cmd = "Glow" })
+package({ 'mfussenegger/nvim-dap' })
+package({ 'leoluz/nvim-dap-go', config = conf.dapgo, })
+package({ 'rcarriga/nvim-dap-ui', config = conf.dapui })
+package({ 'kdheepak/lazygit.nvim' })
