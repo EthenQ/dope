@@ -64,5 +64,5 @@ package({ 'lukas-reineke/lsp-format.nvim' })
 --     require("copilot").setup({})
 --   end,
 -- })
-package({ 'codota/tabnine-nvim', build = ":! ./dl_binaries.sh" })
+--package({ 'codota/tabnine-nvim', build = ":! ./dl_binaries.sh" })
 --package({ 'github/copilot.vim' })
