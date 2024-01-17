@@ -46,3 +46,5 @@ package({ 'mfussenegger/nvim-dap' })
 package({ 'leoluz/nvim-dap-go', config = conf.dapgo, })
 package({ 'rcarriga/nvim-dap-ui', config = conf.dapui })
 package({ 'kdheepak/lazygit.nvim' })
+
+package({ 'lewis6991/gitsigns.nvim',config = conf.gitsigns})

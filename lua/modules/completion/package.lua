@@ -8,7 +8,7 @@ package({
   --
   ft = { 'bufls', 'go', 'sh', 'lua', 'rust', 'c', 'cpp', 'dockerfile', 'markdown', 'yaml', 'helm', 'json', 'jsonc',
     'groovy',
-    "yaml.asnsible" },
+    "yaml.ansible" },
   config = conf.nvim_lsp,
 })
 
